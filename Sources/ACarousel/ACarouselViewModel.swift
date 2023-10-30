@@ -297,7 +297,7 @@ extension ACarouselViewModel {
         /// increments of one and compare to the scrolling duration
         /// return when timing less than duration
         activeTiming()
-        timing += 1
+        
         if timing < autoScroll.interval {
             return
         }
