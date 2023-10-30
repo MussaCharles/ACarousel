@@ -326,7 +326,7 @@ extension ACarouselViewModel {
     
     
     /// reset counting of time
-    private func resetTiming() {
+    func resetTiming() {
         timing = 0
     }
     

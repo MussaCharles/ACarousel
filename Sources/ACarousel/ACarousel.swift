@@ -59,6 +59,7 @@ public struct ACarousel<Data, ID, Content> : View where Data : RandomAccessColle
             viewModel.setTimerActive(false)
         })
         .onAppear(perform: {
+            viewModel.resetTiming()
             viewModel.setTimerActive(true)
         })
     }
