@@ -20,9 +20,15 @@
 
 import SwiftUI
 import Combine
+import OSLog
 
 @available(iOS 13.0, OSX 10.15, *)
 class ACarouselViewModel<Data, ID>: ObservableObject where Data : RandomAccessCollection, ID : Hashable {
+    
+    @available(iOS 14.0, *)
+    private var logger: Logger {
+        return .init(subsystem: "ACarousel", category: "ACarouselViewModel")
+    }
     
     /// external index
     @Binding
@@ -294,6 +300,10 @@ extension ACarouselViewModel {
         guard isTimerActive else {
             return
         }
+        
+//        if #available(iOS 14.0, *) {
+//            logger.debug("receivedTimer: \(value.description)")
+//        }
         /// increments of one and compare to the scrolling duration
         /// return when timing less than duration
         activeTiming()
